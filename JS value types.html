@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>JS Value</title>
+        <style>
+        </style>
+    </head>
+    <body>
+        <center>
+            <p>1 + 2 +3</p>
+        <button onclick="myFunction1()">Three Numbers</button><br><br>
+        <button onclick="myFunction2()">The second one is a string</button><br><br>
+        <Button onclick="myFunction3()">The third one is a stringr</Button>
+        <p id="return"></p>
+    </center>
+        <script>
+            var a = 1 + 2 + 3;
+            var b = 1 + "2" + 3;
+            var c = 1 + 2 + "3";
+            function myFunction1() {
+                document.getElementById("return").innerHTML=a;
+            }
+            function myFunction2(){
+                document.getElementById("return").innerHTML=b;
+            }
+            function myFunction3() {
+                document.getElementById("return").innerHTML=c;
+            }
+        </script>
+    </body>
+</html>

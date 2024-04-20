@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Button</title>
+</head>
+<body>
+    <center>
+        <p>This page demonstrates the function of a button</p>
+        <br />
+        <p>What would be the answer of Number 1 powers Number 2</p>
+        <label>Number 1</label><input type="number" id="Num1"/><br />
+        <label>Number 2</label><input type="number" id="Num2" /> <br />
+        <button onclick="MyFunction()">Calculate</button>
+        <p id="output"></p>
+
+        <script>
+function MyFunction() {
+    var num1 = parseFloat(document.getElementById("Num1").value);
+    var num2 = parseFloat(document.getElementById("Num2").value);
+    var anw = Math.pow(num1, num2);
+    document.getElementById("output").innerHTML = "The Answer is: " + anw ;
+}
+        </script>
+    </center>
+</body>
+</html>
