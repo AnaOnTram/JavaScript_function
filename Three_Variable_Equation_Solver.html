@@ -1,0 +1,77 @@
+<!DOCTYPE HTML>
+<html lang="en">
+    <head>
+        <title>Equation Solver</title>
+        <style>
+            body {
+                text-align: center;
+                background-image: linear-gradient(to right, rgb(242, 197, 50), pink);
+                align-items: center;
+            }
+            table, th, td {
+  border:1px solid black;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+input {
+    width: 30px;
+    height: auto;
+}
+        </style>
+    </head>
+    <body>
+        <h1>3 Variable Equation Solver</h1>
+        <p>Please Enter your equation</p>
+        <p><input type="number" id="1">x-<input type="number" id="2">y+<input type="number" id="3">z=0</p>
+        <p>Please Set the range of each variable</p>
+        <table>
+            <tr>
+            <th>variable</th>
+            <th>Min</th>
+            <th>Max</th>
+            </tr>
+            <tr>
+            <td>x</td>
+            <td><input type="number" id="4"></td>
+            <td><input type="number" id="5"></td>
+            </tr>
+            <tr>
+                <td>y</td>
+                <td><input type="number" id="6"></td>
+                <td><input type="number" id="7"></td>
+            </tr>
+            <tr>
+                <td>z</td>
+                <td><input type="number" id="8"></td>
+                <td><input type="number" id="9"></td>
+            </tr>
+        </table>
+        <button onclick="calculation()">Solve</button>
+        <p id="display"></p>
+        <script>
+            function calculation() {
+                var a = parseFloat(document.getElementById("1").value);
+                var b = parseFloat(document.getElementById("2").value);
+                var c = parseFloat(document.getElementById("3").value);
+                var ramin = parseFloat(document.getElementById("4").value);
+                var ramax = parseFloat(document.getElementById("5").value);
+                var rbmin = parseFloat(document.getElementById("6").value);
+                var rbmax = parseFloat(document.getElementById("7").value);
+                var rcmin = parseFloat(document.getElementById("8").value);
+                var rcmax = parseFloat(document.getElementById("9").value);
+                var anw = "The possible combination of answers: <br>"
+                for (var x = ramin; x <= ramax; x++) {
+                    for (var y = rbmin; y <= rbmax; y++) {
+                        for (var z = rcmin; z <= rcmax; z++) {
+                            if (a*x - b*y + c*z == 0) {
+                                anw += `x = ${x}, y = ${y}, z = ${z} <br>`;
+                            }
+                        }
+                    }
+                }
+                document.getElementById("display").innerHTML = anw;
+            }
+            </script>
+        </body>
+</html>
